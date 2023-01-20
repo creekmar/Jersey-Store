@@ -1,0 +1,19 @@
+<h2>Update Jersey</h2>
+
+<div>
+    <div><span>Name:   <input type="text" [(ngModel)]="jersey.name"/></span></div>
+    <div><span>Number: <input type="number" [(ngModel)]="jersey.number"/></span></div>
+    <div><span>Cost:   <input type="number" [(ngModel)]="jersey.cost"/></span></div>
+    <div><span>Is player home? <input type="checkbox" [(ngModel)]="jersey.home"/></span></div>
+    <div><span>Discount: <input type="number" [(ngModel)]="jersey.discount"/></span></div>
+</div>
+
+<div>
+    <span class="bad" *ngIf="badData">
+        Discount number must be between 0 and 100<br>
+    </span>
+    <!-- <button type="button" (click)="back()">Go Back</button> -->
+    <span *ngIf="owner">
+        <button type="button" (click)="save()">Save Changes</button>
+    </span>
+</div>

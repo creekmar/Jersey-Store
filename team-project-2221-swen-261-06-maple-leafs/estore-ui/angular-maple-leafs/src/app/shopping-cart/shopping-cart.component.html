@@ -1,0 +1,36 @@
+<h1 class = "title">Toronto Maple Leafs Jersey Store</h1>
+
+<div *ngIf="isNotEmpty(); else noJersey">
+  <h2>{{username}}'s Cart</h2>
+  <div class="heroes">
+      <div class="jersey" *ngFor="let jersey of jerseys">
+        <!--<a routerLink="/view/{{jersey.id}}"></a>-->
+        <span *ngIf="jersey.home; else elseBlock">
+          <span class="badge">{{jersey.number}} -</span> {{jersey.name}} - Home - {{jersey.size}} - 
+          <span class="cost">${{jersey.cost}}</span>
+          <span class="discount" *ngIf="jersey.discount!=0">
+            Discount: {{jersey.discount}}% off
+          </span>
+        </span>
+        <ng-template #elseBlock>
+          <span class="badge">{{jersey.number}} - </span> {{jersey.name}} - Away - {{jersey.size}} -
+          <span class="cost">${{jersey.cost}} </span>
+          <span class="discount" *ngIf="jersey.discount!=0">
+            Discount: {{jersey.discount}}% off
+          </span>
+        </ng-template>
+        <button type="button" class="delete" title="remove jersey" (click)="delete(jersey)">X</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noJersey>
+    <span><h2>Your cart is empty! Go buy stuff</h2></span>
+</ng-template>
+
+<p>
+  <span>Total Cost: ${{total|number:'1.2-2'}}</span> <br><br>
+  <button type="button" (click)="back()">Go Back</button>
+  <button type="button" (click)="checkout()">Buy</button>
+
+</p>

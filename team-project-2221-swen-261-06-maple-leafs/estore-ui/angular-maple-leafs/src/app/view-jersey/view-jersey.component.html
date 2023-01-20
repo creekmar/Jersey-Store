@@ -1,0 +1,56 @@
+<!--Only shows if a jersey was found-->
+<h1 class = "title">Toronto Maple Leafs Jersey Store</h1>
+
+<div *ngIf="jersey; else noJersey">
+    <div *ngIf="jersey.discount!=0">
+        <h2 class="discount">Discount: {{jersey.discount}}% off</h2>
+    </div>
+    <h2>{{jersey.name}} {{jersey.number}}</h2>
+    <div><span> <b>ID: </b> </span>{{jersey.id}}</div>
+    <div><span> <b>Cost:</b>  $</span>{{jersey.cost}}</div>
+
+    <!--The size dropdown menu-->
+    <div>
+        <label for="sizes"> <b>Size: </b> </label>
+        <select #sizes name="sizes" id="sizes" (change)="changeSize(sizes.value)">
+            <option *ngFor="let size of sizeList" [value]
+            ="size">{{size}}</option>
+        </select>
+    </div>
+
+    <div *ngIf="jersey.home; else elseBlock">
+        <span><b>Color: </b> Home</span>
+    </div>
+
+    <!--buttons to click-->
+    <div>
+        <button type="button" (click)="back()">Go Back</button>
+        <span *ngIf="isAdmin(); else user">
+            <button type="button" (click)="getEditPage()">Update</button>
+            <button type="button" (click)="delete()">Delete</button>
+        </span>
+        <ng-template #user>
+            <button type="button" (click)="addToCart()">Add to cart</button>
+        </ng-template>
+    </div> <br>
+
+    <!--Service to tell when you bought stuff-->
+    <div *ngIf="messageService.messages.length">
+        <h3>Messages</h3>
+        <button type="button" class="clear" (click)="messageService.clear()">Clear messages</button>
+        <div *ngFor='let message of messageService.messages'>{{message}}</div>
+    </div>
+</div>
+
+<!--Alternative to color of jersey-->
+<ng-template #elseBlock>
+    <span> <b>Color: </b> Away </span>
+</ng-template>
+
+<!--Alternative for when there is no jersey-->
+<ng-template #noJersey>
+    <span><h1>Jersey no longer exists</h1></span>
+    <div>
+        <button type="button" (click)="back()">Go Back</button>
+    </div>
+</ng-template>

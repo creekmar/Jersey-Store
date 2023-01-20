@@ -1,0 +1,44 @@
+.title{
+    color: #0415aa;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+div{
+    text-align: center;
+}
+
+.bad {
+    color: red;
+}
+
+h2{
+    color: #0415aa;
+    text-align: center;
+
+}
+
+button {
+    background-color: #0415aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}

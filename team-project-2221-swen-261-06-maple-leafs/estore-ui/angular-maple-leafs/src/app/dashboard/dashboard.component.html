@@ -1,0 +1,21 @@
+<!-- <p>dashboard works!</p> -->
+
+<div class="top-block">
+    <h1 class = "title">Toronto Maple Leafs Jersey Store</h1>
+    <div class="buttons">
+        <span *ngIf="isAdmin(); else user">
+            <button class="admin-button" type="button" routerLink="/add">Add Jersey</button>
+        </span>
+
+        <ng-template #user>
+            <button type="button" routerLink="/cart/{{username}}">Shopping Cart</button>
+        </ng-template>
+
+        <button type="submit" routerLink="/login">Logout: {{username}}</button><br><br>
+    </div>
+</div>
+
+<app-search-jerseys></app-search-jerseys>
+
+
+

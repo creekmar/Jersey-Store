@@ -1,0 +1,23 @@
+commit 7f7d63736c87d61d32cff365984c76706eef0158
+Author: WizardML7 <dml3483@g.rit.edu>
+Date:   Tue Sep 13 09:08:23 2022 -0400
+
+    Domenic Lo Iacono
+
+commit ce9e879eb2061e394ce816a4b7153439f2f493a8
+Author: Ckin111 <niccollsb@gmail.com>
+Date:   Tue Sep 13 09:07:53 2022 -0400
+
+    Niccolls Evsseef
+
+commit c51fd67981ae1f8cce1c87e1f77384674d1186f5
+Author: Ming Creekmore <mcreekmore480@gmail.com>
+Date:   Tue Sep 13 09:07:01 2022 -0400
+
+    Added name to readme
+
+commit 1edf2598282de5d4b1c29966f2418ba7ff07b899
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Tue Sep 13 12:56:06 2022 +0000
+
+    Initial commit

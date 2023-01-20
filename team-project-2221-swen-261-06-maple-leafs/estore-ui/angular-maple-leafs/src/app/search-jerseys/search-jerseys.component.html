@@ -1,0 +1,28 @@
+<div id="search-component">
+  <div class="search-label" >
+    <label for="search-box"><b>Jersey Search</b> </label>
+  </div>  
+  <div class="search-box" >
+    <input  #searchBox id="search-box" (keyup)="search($event)" />
+  </div>
+
+  <div class="search-result">
+    <div class="jerseys" *ngFor="let jersey of jerseys$ | async" >
+      <a *ngIf="jersey.home; else elseBlock" routerLink="/view/{{jersey.id}}/{{username}}">
+        {{jersey.name}} <br> {{jersey.number}} <br> Home
+        <span class="discount" *ngIf="jersey.discount!=0">
+          <br>Discount: {{jersey.discount}}% off
+        </span>
+      </a>
+      <ng-template #elseBlock>
+        <a routerLink="/view/{{jersey.id}}/{{username}}"> 
+          {{jersey.name}} <br> {{jersey.number}} <br> Away
+          <span class="discount" *ngIf="jersey.discount!=0">
+            <br>Discount: {{jersey.discount}}% off
+          </span>
+        </a>
+      </ng-template>
+    </div>
+  </div>
+</div>
+

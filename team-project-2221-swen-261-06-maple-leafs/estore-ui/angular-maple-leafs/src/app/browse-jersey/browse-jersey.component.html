@@ -1,0 +1,15 @@
+<!-- <div>
+    <button type="button" routerLink="/add">Add Jersey</button>
+</div> -->
+
+<h2>Jerseys</h2>    
+<div class="jersey-menu">
+    <a *ngFor="let jersey of jerseys" routerLink="/view/{{jersey.id}}">
+        <a *ngIf="jersey.home; else elseBlock">
+            {{jersey.name}} {{jersey.number}} Home
+        </a> <br>
+      <ng-template #elseBlock>
+        <a>{{jersey.name}} {{jersey.number}} Away</a>
+      </ng-template>
+    </a>
+</div>

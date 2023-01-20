@@ -1,0 +1,39 @@
+<h1 class = "title">Toronto Maple Leafs Jersey Store</h1>
+<h2>Enter Jersey Attributes Below!</h2>
+<div>
+    <div>
+        <div>
+            <label for="name"><b>Player name </b></label>
+        </div>
+        <input id="name" type="text" placeholder="Enter player name" [(ngModel)]="name"/>
+    </div>
+
+    <div>
+        <div>
+            <label for="name"><b>Player number </b></label>
+        </div>
+        <input id="number" type="number" placeholder="Enter player number" [(ngModel)]="number"/>
+    </div>   
+
+    <div>
+        <div>
+            <label for="cost"><b>Jersey cost </b></label>
+        </div>
+        <input id="cost" type="number" placeholder="Enter jersey cost" [(ngModel)]="cost"/>
+    </div>
+
+    <p> <b>Is player home?   </b><input type="checkbox" [(ngModel)]="isHome"/></p>
+
+    <div>
+        <div>
+            <label for="discount"><b>Jersey discount </b></label>
+        </div>
+        <input id="discount" type="number" placeholder="Enter jersey discount %" [(ngModel)]="discount"/>
+    </div>
+
+    <span class="bad" *ngIf="badData">
+        Discount number must be between 0 and 100<br>
+    </span>
+
+    <button (click)="addJersey()"> Create! </button>
+</div>

@@ -1,0 +1,17 @@
+<h1 class = "title">Welcome to the Toronto Maple Leafs Jersey Store!</h1>
+
+
+<form action="action_page.php" method="post">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" #username required>
+  
+      <button type="submit" (click)="checker(username.value)">Login</button>
+      <button type="submit" (click)="signup(username.value)">Sign Up</button>
+      <p class="message">{{message}}</p>
+    </div>
+  
+    <!-- <div class="container" style="background-color:#f1f1f1">
+    </div> -->
+  </form>
